@@ -32,13 +32,6 @@ keymap.set("n", "<leader>nh", ":nohl<CR>")
 -- ---------- 插件 ----------
 -- nvim-tree
 keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
--- markdonw-preview
-keymap.set("n", "<leader>r", ":MarkdownPreview<CR>")
--- 想通过markdown-toc生成的toc快速跳转
-keymap.set("n", "<leader>m", "0%%lv%%hy:let @/ = '#' . ' ' . escape(@+, '/')<CR>/<CR>")
-
--- table-mode的开启快捷键
-keymap.set("n", "<leader>t", ":TableModeEnable<CR>")
 
 -- coc 的快捷键
 
