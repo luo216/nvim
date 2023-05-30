@@ -40,6 +40,8 @@ vim.g.coc_global_extensions = {
     'coc-pyright',
     'coc-marketplace',
     'coc-lua',
+    'coc-clangd',
+    'coc-json',
 }
 -- 一些官方插件的配置（修改）
 -- Having longer updatetime (default is 4000 ms = 4s) leads to noticeable
