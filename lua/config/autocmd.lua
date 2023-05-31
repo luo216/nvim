@@ -1,3 +1,4 @@
+-- markdonw
 local function bind_markdown_keys()
   local buffer = vim.api.nvim_get_current_buf() -- 获取当前buffer
   -- markdonw-preview
@@ -10,14 +11,22 @@ local function bind_markdown_keys()
   vim.api.nvim_buf_set_keymap(buffer, "n", "<leader>p", ":call mdip#MarkdownClipboardImage()<CR>", { noremap = true, silent = true })
 end
 
+-- hex to binary and binary to hex
+local function bind_txt_keys()
+  vim.keymap.set("n", "hb", ":%!xxd -r<CR>")
+  vim.keymap.set("n", "bh", ":%!xxd<CR>")
+end
+
 -- 注册自动命令
 vim.cmd([[
   augroup markdownautocmds
     autocmd!
     autocmd BufWinEnter *.md lua require('config.autocmd').bind_markdown_keys()
+    autocmd BufWinEnter *.txt lua require('config.autocmd').bind_txt_keys()
   augroup END
 ]])
 
 local M = {}
 M.bind_markdown_keys = bind_markdown_keys
+M.bind_txt_keys = bind_txt_keys
 return M
