@@ -37,11 +37,15 @@ opt.signcolumn = "yes"
 -- coc的配置
 -- 配置设置有哪些语言的补全
 vim.g.coc_global_extensions = {
-    'coc-pyright',
     'coc-marketplace',
+    'coc-tsserver',
+    'coc-pyright',
     'coc-lua',
-    'coc-clangd',
     'coc-json',
+    'coc-html-css-support',
+    'coc-clangd',
+    '@yaegassy/coc-volar',
+    'coc-eslint8',
 }
 -- 一些官方插件的配置（修改）
 -- Having longer updatetime (default is 4000 ms = 4s) leads to noticeable
