@@ -13,6 +13,7 @@
   "nvim-treesitter": { "branch": "master", "commit": "78b3a8229356e7d7eb62d1da4fe723dcff16076e" },
   "nvim-ts-rainbow": { "branch": "master", "commit": "ef95c15a935f97c65a80e48e12fe72d49aacf9b9" },
   "nvim-web-devicons": { "branch": "master", "commit": "986875b7364095d6535e28bd4aac3a9357e91bbe" },
+  "ranger.nvim": { "branch": "main", "commit": "49045499d3933ec929675c4e886ab1da9eeca438" },
   "tokyonight.nvim": { "branch": "main", "commit": "df13e3268a44f142999fa166572fe95a650a0b37" },
   "vim-fugitive": { "branch": "master", "commit": "5f0d280b517cacb16f59316659966c7ca5e2bea2" },
   "vim-gitgutter": { "branch": "master", "commit": "2ee95686c5944f99b42dd04fec005b30497006de" },
