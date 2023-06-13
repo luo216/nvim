@@ -27,7 +27,7 @@ vim.cmd([[
 
 -- hex和binary相互转换
 vim.cmd([[
-  augroup markdownautocmds
+  augroup hex2binautocmds
     autocmd!
     autocmd BufWinEnter *.txt lua require('config.autocmd').bind_txt_keys()
   augroup END
