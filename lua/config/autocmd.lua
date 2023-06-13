@@ -14,7 +14,7 @@ end
 -- hex to binary and binary to hex
 local function bind_txt_keys()
   vim.keymap.set("n", "<leader>b", ":%!xxd -r<CR>")
-  vim.keymap.set("n", "<leader>h", ":%!xxd<CR>")
+  vim.keymap.set("n", "<leader><S-b>", ":%!xxd<CR>")
 end
 
 -- 注册自动命令
