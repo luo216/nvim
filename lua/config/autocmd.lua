@@ -22,8 +22,23 @@ vim.cmd([[
   augroup markdownautocmds
     autocmd!
     autocmd BufWinEnter *.md lua require('config.autocmd').bind_markdown_keys()
+  augroup END
+]])
+
+-- hex和binary相互转换
+vim.cmd([[
+  augroup markdownautocmds
+    autocmd!
     autocmd BufWinEnter *.txt lua require('config.autocmd').bind_txt_keys()
   augroup END
+]])
+
+-- 保存文件自动格式化(prettier)
+vim.cmd([[
+augroup prettierautocmds
+  autocmd!
+  autocmd BufWritePre *.js,*.ts,*.jsx,*.tsx,*.json,*.vue :Prettier
+augroup END
 ]])
 
 local M = {}
