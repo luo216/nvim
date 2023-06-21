@@ -29,6 +29,9 @@ keymap.set("n", "<C-s>", ":w<CR>")
 -- 取消高亮
 keymap.set("n", "<leader>nh", ":nohl<CR>")
 
+-- FZF
+keymap.set("n", "<leader>f", ":FZF<CR>")
+
 -- ---------- 插件 ----------
 -- nvim-tree
 keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
