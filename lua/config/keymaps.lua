@@ -14,6 +14,33 @@ keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 -- ----------正常模式----------- --
+-- Define a Lua function to remove the current buffer and switch to the adjacent buffer
+function RemoveCurrentBufferAndSwitch()
+    local current_bufnr = vim.fn.bufnr()
+    vim.cmd("bd") -- Execute the 'bd' command to delete the buffer
+
+    -- Check if the buffer was successfully deleted
+    if vim.fn.bufexists(current_bufnr) == 1 then
+        print("Failed to delete buffer.")
+        return
+    end
+
+    local adjacent_bufnr = vim.fn.bufnr(vim.fn.bufidx('#') - 1)
+    if adjacent_bufnr == -1 then
+        adjacent_bufnr = vim.fn.bufnr(vim.fn.bufidx('#') + 1) 
+    end
+
+    -- Check if the adjacent buffer exists
+    if vim.fn.bufexists(adjacent_bufnr) == 1 then
+        vim.fn.bufnr(adjacent_bufnr)
+    else
+        print("No adjacent buffer found.")
+    end
+end
+
+-- Define a mapping for <leader>w to call the 'RemoveCurrentBufferAndSwitch' function
+vim.api.nvim_set_keymap('n', '<leader>w', ':lua RemoveCurrentBufferAndSwitch()<CR>', { noremap = true })
+
 -- 设置shift+l下一个buffer
 keymap.set("n", "<S-l>", ":bnext<CR>")
 -- 设置shift+h上一个buffer
