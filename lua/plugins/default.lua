@@ -25,6 +25,14 @@ return {
     end
   },
 
+  -- add color show
+  {
+    "norcalli/nvim-colorizer.lua",
+    config = function ()
+      require("colorizer").setup()
+    end
+  },
+
   -- add visual-multi
   {
   "mg979/vim-visual-multi",
