@@ -17,6 +17,14 @@ return {
     },
   },
 
+  -- add code rain
+  {
+    "Eandrju/cellular-automaton.nvim",
+    config = function ()
+      vim.keymap.set('n', '<leader>r', '<cmd>CellularAutomaton make_it_rain<CR>', { desc = 'code rain' })
+    end
+  },
+
   -- add visual-multi
   {
   "mg979/vim-visual-multi",
