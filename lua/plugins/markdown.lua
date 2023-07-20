@@ -8,7 +8,7 @@ return {
     config = function()
       vim.g.mkdp_browser = "surf"
       vim.keymap.set("n", "<leader>mr", "<cmd>MarkdownPreview<cr>", { desc = "Markdown preview" })
-      vim.keymap.set("n", "<leader>m", "", { desc = "markdown" })
+      vim.keymap.set("n", "<leader>m", " ", { desc = "markdown" })
     end,
   },
 
