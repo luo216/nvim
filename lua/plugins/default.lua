@@ -35,7 +35,7 @@ return {
 
   -- add visual-multi
   {
-    "mg979/vim-visual-multi",
+    "luo216/vim-visual-multi",
   },
 
   -- change trouble config
