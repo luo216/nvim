@@ -6,7 +6,7 @@ return {
     build = "cd app && yarn install",
     -- 设置preveiew浏览器
     config = function()
-      vim.g.mkdp_browser = "surf"
+      vim.g.mkdp_browser = "google-chrome-stable"
       vim.keymap.set("n", "<leader>mr", "<cmd>MarkdownPreview<cr>", { desc = "Markdown preview" })
       vim.keymap.set("n", "<leader>m", " ", { desc = "markdown" })
     end,

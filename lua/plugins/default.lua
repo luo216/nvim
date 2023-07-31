@@ -37,6 +37,14 @@ return {
   {
     "luo216/vim-visual-multi",
   },
+  
+  -- add joshuto plugins for thecw
+  {
+    "theniceboy/joshuto.nvim",
+    config = function ()
+      vim.keymap.set('n', '<leader>j', '<cmd>Joshuto<CR>', { desc = 'joshuto' } )
+    end
+  },
 
   -- change trouble config
   {
@@ -176,6 +184,7 @@ return {
         "typescript",
         "vim",
         "yaml",
+        "php",
       },
     },
   },
