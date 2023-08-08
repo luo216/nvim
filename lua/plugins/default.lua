@@ -35,9 +35,16 @@ return {
 
   -- add visual-multi
   {
-    "luo216/vim-visual-multi",
+  	"mg979/vim-visual-multi",
+  	init = function()
+  		vim.cmd([[
+        let g:VM_maps = {}
+        let g:VM_maps["Add Cursor Down"] = '<C-u>'
+        let g:VM_maps["Add Cursor Up"] = ''
+      ]])
+  	end
   },
-  
+
   -- add joshuto plugins for thecw
   {
     "theniceboy/joshuto.nvim",
