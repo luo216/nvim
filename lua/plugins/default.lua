@@ -239,8 +239,34 @@ return {
     "nvim-lualine/lualine.nvim",
     event = "VeryLazy",
     opts = function()
+      local icons = require("lazyvim.config").icons
+      -- local Util = require("lazyvim.util")
       return {
-        --[[add your custom lualine config here]]
+        sections = {
+          lualine_c = {
+            {
+              "diagnostics",
+              symbols = {
+                error = icons.diagnostics.Error,
+                warn = icons.diagnostics.Warn,
+                info = icons.diagnostics.Info,
+                hint = icons.diagnostics.Hint,
+              },
+            },
+            { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
+            { "filename", path = 1, symbols = { modified = "  ", readonly = "", unnamed = "" } },
+            -- stylua: ignore
+            {
+              function() return require("nvim-navic").get_location() end,
+              cond = function() return package.loaded["nvim-navic"] and require("nvim-navic").is_available() end,
+            },
+          },
+          lualine_x = {
+            { function() return vim.fn['codeium#GetStatusString']() end, separator = "", padding = { left = 0, right = 0 } },
+            { "encoding", separator = "", padding = { left = 0, right = 0 } },
+            -- { "filetype", separator = "", padding = { left = 0, right = 0 } },
+          }
+        },
       }
     end,
   },
