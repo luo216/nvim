@@ -20,7 +20,16 @@ return {
   -- ai code codeium
   {
     'Exafunction/codeium.vim',
-    event = 'BufEnter'
+    event = 'BufEnter',
+    config = function()
+      -- disabled by setting codeium's default keymap
+      vim.g.codeium_disable_bindings = 1
+      -- change codeium's default keymap
+      vim.keymap.set('i', '<C-j>', function () return vim.fn['codeium#Accept']() end, { expr = true })
+      vim.keymap.set('i', '<C-l>', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true })
+      vim.keymap.set('i', '<C-h>', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true })
+      vim.keymap.set('i', '<C-c>', function() return vim.fn['codeium#Clear']() end, { expr = true })
+    end
   },
 
   -- add code rain
