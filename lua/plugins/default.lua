@@ -17,6 +17,12 @@ return {
     },
   },
 
+  -- ai code codeium
+  {
+    'Exafunction/codeium.vim',
+    event = 'BufEnter'
+  },
+
   -- add code rain
   {
     "Eandrju/cellular-automaton.nvim",
