@@ -240,6 +240,29 @@ return {
     event = "VeryLazy",
     opts = function()
       local icons = require("lazyvim.config").icons
+      -- add icons for codeium
+      local codeiumicons = {
+        on = " ",
+        off = " ",
+        noprompt = " ",
+        loading = " "
+      }
+      -- 创建一个方法获取图标
+      local get_codeium_status_icon = function()
+        local codeium_status = vim.fn['codeium#GetStatusString']()
+        if codeium_status == " ON" then
+          return codeiumicons.on
+        elseif codeium_status == "OFF" then
+          return codeiumicons.off
+        elseif codeium_status == " * " then
+          return codeiumicons.loading
+        elseif codeium_status == " 0 " then
+          return codeiumicons.noprompt
+        else
+          return codeium_status
+        end
+      end
+
       -- local Util = require("lazyvim.util")
       return {
         sections = {
@@ -262,7 +285,7 @@ return {
             },
           },
           lualine_x = {
-            { function() return vim.fn['codeium#GetStatusString']() end, separator = "", padding = { left = 0, right = 0 } },
+            { get_codeium_status_icon, separator = "", padding = { left = 0, right = 0 } },
             { "encoding", separator = "", padding = { left = 0, right = 0 } },
             -- { "filetype", separator = "", padding = { left = 0, right = 0 } },
           }
