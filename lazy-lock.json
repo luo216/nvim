@@ -14,6 +14,7 @@
   "codeium.vim": { "branch": "main", "commit": "70ba94ac71ead53a9442aca1a86c0c10a16b587a" },
   "crates.nvim": { "branch": "main", "commit": "4ce7c51b881e58f1e2f8f437f30e4e583cbac319" },
   "dressing.nvim": { "branch": "master", "commit": "e6eff7a5a950a853c3903d906dbcea03f778db5f" },
+  "dropbar.nvim": { "branch": "master", "commit": "d9e2b240e9d4fe42fc74c9e40127f3217f00e14b" },
   "flash.nvim": { "branch": "main", "commit": "34cf6f685d2eabc8de438fdbaa41c8c17e9da459" },
   "friendly-snippets": { "branch": "main", "commit": "8f5db6c5b691a6bbaa5dabd9afeb164ef8a06d04" },
   "gitsigns.nvim": { "branch": "main", "commit": "5a04466685008f29c71fa5ec25d421deb1c83fea" },

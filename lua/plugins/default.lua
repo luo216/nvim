@@ -225,6 +225,15 @@ return {
     end,
   },
 
+  -- topbar
+  { "Bekaboo/dropbar.nvim" },
+
+  {
+    "Saecki/crates.nvim",
+    event = { "BufRead Cargo.toml" },
+    config = true,
+  },
+
   -- the opts function can also be used to change the default opts:
   {
     "nvim-lualine/lualine.nvim",
@@ -266,24 +275,6 @@ return {
       -- local Util = require("lazyvim.util")
       return {
         sections = {
-          lualine_c = {
-            {
-              "diagnostics",
-              symbols = {
-                error = icons.diagnostics.Error,
-                warn = icons.diagnostics.Warn,
-                info = icons.diagnostics.Info,
-                hint = icons.diagnostics.Hint,
-              },
-            },
-            { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
-            { "filename", path = 1, symbols = { modified = "  ", readonly = "", unnamed = "" } },
-            -- stylua: ignore
-            {
-              function() return require("nvim-navic").get_location() end,
-              cond = function() return package.loaded["nvim-navic"] and require("nvim-navic").is_available() end,
-            },
-          },
           lualine_x = {
             { get_codeium_status_icon, separator = "", padding = { left = 0, right = 0 } },
             { "encoding", separator = "", padding = { left = 0, right = 0 } },
