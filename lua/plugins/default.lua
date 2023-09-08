@@ -37,16 +37,16 @@ return {
     'voldikss/vim-translator',
     config = function ()
       vim.keymap.set('n', '<leader>t', ' ', { desc = 'translate' })
-      vim.keymap.set('n', '<leader>tt', '<cmd>Translate<CR>', { desc = 'translate' })
-      vim.keymap.set('n', '<leader>tw', '<cmd>TranslateW<CR>', { desc = 'translate W' })
-      vim.keymap.set('n', '<leader>tr', '<cmd>TranslateR<CR>', { desc = 'translate R' })
-      vim.keymap.set('n', '<leader>tx', '<cmd>TranslateX<CR>', { desc = 'translate X' })
+      vim.keymap.set('n', '<leader>tt', '<cmd>Translate<CR>', { desc = 'translate to cmdline' })
+      vim.keymap.set('n', '<leader>tw', '<cmd>TranslateW<CR>', { desc = 'translate to Window' })
+      vim.keymap.set('n', '<leader>tr', '<cmd>TranslateR<CR>', { desc = 'translate to Replace' })
+      vim.keymap.set('n', '<leader>tc', '<cmd>TranslateX<CR>', { desc = 'translate to clipboard' })
 
       vim.keymap.set('v', '<leader>t', " ", { desc = 'translate' })
-      vim.keymap.set('v', '<leader>tt', ":'<,'>Translate<CR>", { desc = 'translate' })
-      vim.keymap.set('v', '<leader>tw', ":'<,'>TranslateW<CR>", { desc = 'translate W' })
-      vim.keymap.set('v', '<leader>tr', ":'<,'>TranslateR<CR>", { desc = 'translate R' })
-      vim.keymap.set('v', '<leader>tx', ":'<,'>TranslateX<CR>", { desc = 'translate X' })
+      vim.keymap.set('v', '<leader>tt', ":'<,'>Translate<CR>", { desc = 'translate to cmdline' })
+      vim.keymap.set('v', '<leader>tw', ":'<,'>TranslateW<CR>", { desc = 'translate to Window' })
+      vim.keymap.set('v', '<leader>tr', ":'<,'>TranslateR<CR>", { desc = 'translate to Replace' })
+      vim.keymap.set('v', '<leader>tc', ":'<,'>TranslateX<CR>", { desc = 'translate to clipboard' })
 
       --Create a function to switch languages
       local function toggleLanguage()
@@ -289,7 +289,7 @@ return {
         noprompt = " ",
         loading = " "
       }
-      -- 创建一个方法获取图标
+      --Create a method to get the icon
       local get_codeium_status_icon = function()
         local codeium_status = vim.fn['codeium#GetStatusString']()
         if codeium_status == " ON" then
