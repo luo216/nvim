@@ -47,6 +47,22 @@ return {
       vim.keymap.set('v', '<leader>tw', ":'<,'>TranslateW<CR>", { desc = 'translate W' })
       vim.keymap.set('v', '<leader>tr', ":'<,'>TranslateR<CR>", { desc = 'translate R' })
       vim.keymap.set('v', '<leader>tx', ":'<,'>TranslateX<CR>", { desc = 'translate X' })
+
+      --Create a function to switch languages
+      local function toggleLanguage()
+        -- If g:translator target lang is zh, switch to en
+        if vim.g.translator_target_lang == 'zh' then
+          vim.g.translator_target_lang = 'en'
+          -- Use cmdline to prompt lang to switch to en
+          print('translator target lang EN')
+        else
+          vim.g.translator_target_lang = 'zh'
+          -- Use cmdline to prompt lang to switch to zh
+          print('translator target lang ZH')
+        end
+      end
+
+      vim.keymap.set('n', '<leader>t<Tab>', toggleLanguage, { desc = 'toggle Language' } )
     end
   },
 
@@ -266,7 +282,6 @@ return {
     "nvim-lualine/lualine.nvim",
     event = "VeryLazy",
     opts = function()
-      local icons = require("lazyvim.config").icons
       -- add icons for codeium
       local codeiumicons = {
         on = " ",
