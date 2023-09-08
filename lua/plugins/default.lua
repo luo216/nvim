@@ -32,6 +32,24 @@ return {
     end
   },
 
+  -- translate
+  {
+    'voldikss/vim-translator',
+    config = function ()
+      vim.keymap.set('n', '<leader>t', ' ', { desc = 'translate' })
+      vim.keymap.set('n', '<leader>tt', '<cmd>Translate<CR>', { desc = 'translate' })
+      vim.keymap.set('n', '<leader>tw', '<cmd>TranslateW<CR>', { desc = 'translate W' })
+      vim.keymap.set('n', '<leader>tr', '<cmd>TranslateR<CR>', { desc = 'translate R' })
+      vim.keymap.set('n', '<leader>tx', '<cmd>TranslateX<CR>', { desc = 'translate X' })
+
+      vim.keymap.set('v', '<leader>t', " ", { desc = 'translate' })
+      vim.keymap.set('v', '<leader>tt', ":'<,'>Translate<CR>", { desc = 'translate' })
+      vim.keymap.set('v', '<leader>tw', ":'<,'>TranslateW<CR>", { desc = 'translate W' })
+      vim.keymap.set('v', '<leader>tr', ":'<,'>TranslateR<CR>", { desc = 'translate R' })
+      vim.keymap.set('v', '<leader>tx', ":'<,'>TranslateX<CR>", { desc = 'translate X' })
+    end
+  },
+
   -- add code rain
   {
     "Eandrju/cellular-automaton.nvim",
